@@ -40,9 +40,9 @@ public void printLinkedList(LinkedList list){
         System.out.println("LinkedList:");
         System.out.println("Lets create a simple Linked List of:\n 56, 30, 70");
         LinkedList list = new LinkedList();
-        list.addData(56);
-        list.addData(30);
         list.addData(70);
+        list.addData(30);
+        list.addData(56);
         list.printLinkedList(list);
     }
     }
