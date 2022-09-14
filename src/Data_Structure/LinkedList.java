@@ -23,6 +23,15 @@ public void addData(int element){
 
         }
 }
+public void search(int searchElement){
+        Node thisNode = head;
+        while (thisNode != null){
+            if (thisNode.data == searchElement){
+                System.out.println("found element"+searchElement+"in this element");
+            }
+            thisNode = thisNode.nextNode;
+        }
+}
 public void insert(int element){
         Node new_node = new Node(element);
         Node thisNode = head;
@@ -67,15 +76,18 @@ public void printLinkedList(LinkedList list){
         list.addData(30);
         list.insert(70);
         list.printLinkedList(list);
-        System.out.println("After Deleting the first element:  ");
-        list.pop(70);
+        System.out.println("Searching for element 30 in the Linked List:  ");
+        list.search(30);
         list.printLinkedList(list);
     }
     }
 
 
-/*Ability to delete the last
-element in the LinkedList
-of sequence 56->30->70 - Write popLast method
-- Note there is new tail
-- Final Sequence: 56->30*/
+/*Ability to search
+LinkedList to find Node
+with value 30
+
+- Write Junit Test Case as
+demonstrated in class
+- Loop through LinkedList to
+find node with key 30*/
