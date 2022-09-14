@@ -37,6 +37,14 @@ public void pop(int dataDelete){
             thisNode = head.nextNode;
             head = thisNode;
         }
+        else {
+            Node previous = null;
+            while (thisNode.data != dataDelete){
+                previous = thisNode;
+                thisNode = thisNode.nextNode;
+            }
+            previous.nextNode = thisNode.nextNode;
+        }
 }
 public void printLinkedList(LinkedList list){
         Node thisNode = head;
@@ -60,14 +68,14 @@ public void printLinkedList(LinkedList list){
         list.insert(70);
         list.printLinkedList(list);
         System.out.println("After Deleting the first element:  ");
-        list.pop(56);
+        list.pop(70);
         list.printLinkedList(list);
     }
     }
 
 
-/*Ability to delete the first
+/*Ability to delete the last
 element in the LinkedList
-of sequence 56->30->70 - Write pop method
-- Note there is new head
-- Final Sequence: 30->70*/
+of sequence 56->30->70 - Write popLast method
+- Note there is new tail
+- Final Sequence: 56->30*/
