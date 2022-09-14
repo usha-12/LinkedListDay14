@@ -23,6 +23,14 @@ public void addData(int element){
 
         }
 }
+public void insert(int element){
+        Node new_node = new Node(element);
+        Node thisNode = head;
+        while (thisNode.data != 56)
+            thisNode = thisNode.nextNode;
+        new_node.nextNode = thisNode.nextNode;
+        thisNode.nextNode = new_node;
+}
 public void printLinkedList(LinkedList list){
         Node thisNode = head;
         if (thisNode == null)
@@ -41,17 +49,17 @@ public void printLinkedList(LinkedList list){
         System.out.println("Lets create a simple Linked List of:\n 56, 30, 70");
         LinkedList list = new LinkedList();
         list.addData(56);
-        list.addData(30);
         list.addData(70);
+        list.printLinkedList(list);
+        list.insert(30);
         list.printLinkedList(list);
     }
     }
 
 
-/*Ability to create Linked
-List by appending 30 and
-70 to 56
-- Node with data 56 is First Created
-- Next Append 30 to 56
-- Finally Append 70 to 30
-- LinkedList Sequence: 56->30->70*/
+/*Ability to insert
+30 between 56
+
+and 70
+
+- Final Sequence: 56->30->70*/
