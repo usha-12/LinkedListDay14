@@ -31,6 +31,13 @@ public void insert(int element){
         new_node.nextNode = thisNode.nextNode;
         thisNode.nextNode = new_node;
 }
+public void pop(int dataDelete){
+        Node thisNode = head;
+        if (dataDelete == head.data){
+            thisNode = head.nextNode;
+            head = thisNode;
+        }
+}
 public void printLinkedList(LinkedList list){
         Node thisNode = head;
         if (thisNode == null)
@@ -49,17 +56,18 @@ public void printLinkedList(LinkedList list){
         System.out.println("Lets create a simple Linked List of:\n 56, 30, 70");
         LinkedList list = new LinkedList();
         list.addData(56);
-        list.addData(70);
+        list.addData(30);
+        list.insert(70);
         list.printLinkedList(list);
-        list.insert(30);
+        System.out.println("After Deleting the first element:  ");
+        list.pop(56);
         list.printLinkedList(list);
     }
     }
 
 
-/*Ability to insert
-30 between 56
-
-and 70
-
-- Final Sequence: 56->30->70*/
+/*Ability to delete the first
+element in the LinkedList
+of sequence 56->30->70 - Write pop method
+- Note there is new head
+- Final Sequence: 30->70*/
