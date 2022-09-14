@@ -32,10 +32,10 @@ public void search(int searchElement){
             thisNode = thisNode.nextNode;
         }
 }
-public void insert(int element){
-        Node new_node = new Node(element);
+public void insert(int insertElement, int previous){
+        Node new_node = new Node(insertElement);
         Node thisNode = head;
-        while (thisNode.data != 56)
+        while (thisNode.data != previous)
             thisNode = thisNode.nextNode;
         new_node.nextNode = thisNode.nextNode;
         thisNode.nextNode = new_node;
@@ -74,20 +74,21 @@ public void printLinkedList(LinkedList list){
         LinkedList list = new LinkedList();
         list.addData(56);
         list.addData(30);
-        list.insert(70);
+        list.insert(70, 30);
         list.printLinkedList(list);
-        System.out.println("Searching for element 30 in the Linked List:  ");
-        list.search(30);
+        System.out.println("Inserting 40 after 30 in the Linked List:  ");
+        list.insert(40, 30);
         list.printLinkedList(list);
     }
     }
 
 
-/*Ability to search
-LinkedList to find Node
-with value 30
-
-- Write Junit Test Case as
-demonstrated in class
-- Loop through LinkedList to
-find node with key 30*/
+/*Ability to insert 40 after 30 to
+the Linked List sequence of
+56->30->70
+- Write Junit Test Case as demonstrated
+in class
+- Search LinkedList to get Node with key
+value 30
+- Then Insert 40 to 30
+- Final Sequence: 56->30->40->70*/
