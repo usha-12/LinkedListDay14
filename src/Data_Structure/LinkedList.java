@@ -86,24 +86,23 @@ public void printLinkedList(LinkedList list){
         System.out.println("LinkedList:");
         System.out.println("Lets create a simple Linked List of:\n 56, 30, 70");
         LinkedList list = new LinkedList();
+        System.out.println("Ascending order of data entered");
         list.addData(56);
         list.addData(30);
         list.addData(40);
         list.addData(70);
         list.printLinkedList(list);
-        System.out.println("Deleting 40 from the Linked List:  ");
-        list.pop(40);
-        list.printLinkedList(list);
-        list.printSize();
+
     }
     }
 
-
-/*Ability to delete 40 from the Linked
-List sequence of 56->30->40->70
-and show the size of LinkedList is 3
-- Write Junit Test Case as demonstrated in class
-- Search LinkedList to find node with key value 40
-- Delete the node
-- Implement size() and show the Linked List size is 3
-- Final Sequence: 56->30->70*/
+/*Ability to create Ordered Linked List
+in ascending order of data entered
+in following sequence 56, 30, 40,
+and 70
+- Refactor the code to create SortedLinkedList
+Class
+- Create Node that takes data that is
+Comparable
+- Perform Sorting during the add method call
+- Final Sequence: 30->40->56->70*/
